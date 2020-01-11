@@ -1,0 +1,28 @@
+{
+  "name": "rxjs-init",
+  "version": "1.0.0",
+  "description": "Init with rxJs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yonicb/rxjs-init.git"
+  },
+  "keywords": [
+    "rxjs"
+  ],
+  "author": "Yoni Calsin <helloyonicb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yonicb/rxjs-init/issues"
+  },
+  "homepage": "https://github.com/yonicb/rxjs-init#readme",
+  "dependencies": {
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@reactivex/rxjs": "^6.5.4"
+  }
+}
