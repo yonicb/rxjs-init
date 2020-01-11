@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/yonicb/rxjs-init#readme",
   "dependencies": {
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
-    "@reactivex/rxjs": "^6.5.4"
+    "@reactivex/rxjs": "^6.5.4",
+    "webpack-cli": "^3.3.10"
   }
 }
