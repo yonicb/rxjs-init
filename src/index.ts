@@ -1,27 +1,30 @@
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'
 
-const observable = new Observable(subscriber => {
-  subscriber.next(function () {
-    console.log('Primera peticion !');
-  });
-  subscriber.next(2);
-  subscriber.next(3);
-  setTimeout(() => {
-    subscriber.next(4);
-    subscriber.complete();
-  }, 1000);
-});
-
-console.log('just before subscribe');
-observable.subscribe({
-  next(x) {
-    if (typeof x === "function") {
-      x()
-    } else {
-      console.log('got value ' + x);
+var observable = Observable.create((observer: any) => {
+    try {
+        observer.next('Hey guys!')
+        observer.next('How are you?')
+        setInterval(() => {
+            observer.next('I am good')
+        }, 2000)
+    } catch (err) {
+        observer.error(err)
     }
-  },
-  error(err) { console.error('something wrong occurred: ' + err); },
-  complete() { console.log('done'); }
-});
-console.log('just after subscribe');
+})
+
+var obs1 = observable.subscribe(
+    (x: any) => addItem(x),
+    (error: any) => addItem(error),
+    () => addItem('Completed')
+);
+setTimeout(() => {
+    console.log('Closed !');
+    obs1.unsubscribe();
+}, 6001);
+
+function addItem(val: any) {
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(val);
+    node.appendChild(textnode);
+    document.getElementById("output").appendChild(node);
+}
