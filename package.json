@@ -4,7 +4,7 @@
   "description": "Init with rxJs",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
-    "@reactivex/rxjs": "^6.5.4",
     "webpack-cli": "^3.3.10"
   }
 }
